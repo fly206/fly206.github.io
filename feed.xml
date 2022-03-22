@@ -1,0 +1,82 @@
+
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>http://localhost:4000/</id>
+  <title>Notes</title>
+  <subtitle>Enter ye in by the narrow gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many be they that enter in thereby.</subtitle>
+  <updated>2022-03-23T01:19:04+08:00</updated>
+  <author>
+    <name>flyflyan</name>
+    <uri>http://localhost:4000/</uri>
+  </author>
+  <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
+  <link rel="alternate" type="text/html" hreflang="zh-CN"
+    href="http://localhost:4000/"/>
+  <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
+  <rights> © 2022 flyflyan </rights>
+  <icon>/assets/img/favicons/favicon.ico</icon>
+  <logo>/assets/img/favicons/favicon-96x96.png</logo>
+
+
+  
+  <entry>
+    <title>R4S 系统安装小记录</title>
+    <link href="http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="alternate" type="text/html" title="R4S 系统安装小记录" />
+    <published>2022-03-23T00:03:51+08:00</published>
+  
+    <updated>2022-03-23T00:03:51+08:00</updated>
+  
+    <id>http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</id>
+    <content src="http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" />
+    <author>
+      <name>fly206</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      为R4S软路由安装系统，测试了一下不同的发行版的根文件系统，尝试了一下内核编译和引导
+
+R4S系统安装小记录
+
+准备编译环境
+安装交叉编译工具链，对应archlinux安装以下包即可
+aarch64-linux-gnu-binutils
+aarch64-linux-gnu-gcc
+aarch64-linux-gnu-gdb
+aarch64-linux-gnu-glibc
+aarch64-linux-gnu-linux-api-headers
+
+准备tf卡
+准备空sd卡，插入电脑，将tf卡格式化，sdX为tf卡根盘符
+dd if=/dev/zero of=/dev/sdX bs=1M count=32
+
+使用fdisk创建分区
+fdisk /dev/sdX
+# 依次输入以下命令
+o		#创建新的msdos格式分区
+n		#创建新分区
+p		#p选择主分区
+1		#分区第一个分区
+327...
+    </summary>
+  
+
+  </entry>
+
+</feed>
+
+
