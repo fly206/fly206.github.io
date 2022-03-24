@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Notes</title>
   <subtitle>Enter ye in by the narrow gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many be they that enter in thereby.</subtitle>
-  <updated>2022-03-24T21:52:02+08:00</updated>
+  <updated>2022-03-24T22:17:58+08:00</updated>
   <author>
     <name>fly206</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,63 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>iw 命令编译</title>
+    <link href="http://localhost:4000/posts/iw%E5%B7%A5%E5%85%B7%E7%BC%96%E8%AF%91/" rel="alternate" type="text/html" title="iw 命令编译" />
+    <published>2022-03-24T22:05:53+08:00</published>
+  
+    <updated>2022-03-24T22:05:53+08:00</updated>
+  
+    <id>http://localhost:4000/posts/iw%E5%B7%A5%E5%85%B7%E7%BC%96%E8%AF%91/</id>
+    <content src="http://localhost:4000/posts/iw%E5%B7%A5%E5%85%B7%E7%BC%96%E8%AF%91/" />
+    <author>
+      <name>fly206</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      iw 命令编译–交叉编译
+准备工作
+
+移植libnl
+下载:源码
+
+configure:
+
+./configure --prefix=/run/media/fly/rootfs --target=arm-linux-gnueabihf --host=arm-linux-gnueabihf --build=x86_64-linux-gnu CC=arm-linux-gnueabihf-gcc AR=arm-linux-gnueabihf-ar
+
+或
+./configure --host=arm-linux-gnueabihf --build=armv7l --prefix=/run/media/fly/rootfs
+
+编译安装:
+make &amp;amp; make install
+
+移植iw
+
+下载:源码
+
+添加环境(目录为libnl安装目录lib及其下的pkgconfig目录):
+exp...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
