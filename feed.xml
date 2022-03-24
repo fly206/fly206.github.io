@@ -4,16 +4,16 @@
   <id>http://localhost:4000/</id>
   <title>Notes</title>
   <subtitle>Enter ye in by the narrow gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many be they that enter in thereby.</subtitle>
-  <updated>2022-03-23T01:28:15+08:00</updated>
+  <updated>2022-03-24T21:52:02+08:00</updated>
   <author>
-    <name>flyflyan</name>
+    <name>fly206</name>
     <uri>http://localhost:4000/</uri>
   </author>
   <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="zh-CN"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator>
-  <rights> © 2022 flyflyan </rights>
+  <rights> © 2022 fly206 </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
