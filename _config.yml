@@ -36,16 +36,19 @@ github:
 
 #twitter:
 #  username: twitter_username            # change to your twitter username
+bilibili:
+   uid: 15224120
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: flyflyan
+  name: fly206
   email: flyflyan@outlook.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
     # - https://twitter.com/username      # change to your twitter homepage
     - https://github.com/fly206       # change to your github homepage
+    - https://space.bilibili.com/15224120
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
