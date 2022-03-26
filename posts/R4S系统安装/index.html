@@ -81,7 +81,7 @@
 <meta property="twitter:image" content="https://raw.githubusercontent.com/fly206/fly206.github.io/main/images/note_img/void-neofetch.png" />
 <meta property="twitter:title" content="R4S 系统安装小记录" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"fly206"},"dateModified":"2022-03-23T00:03:51+08:00","datePublished":"2022-03-23T00:03:51+08:00","description":"为R4S软路由安装系统，测试了一下不同的发行版的根文件系统，尝试了一下内核编译和引导","headline":"R4S 系统安装小记录","image":{"width":800,"height":500,"url":"http://localhost:4000/images/note_img/void-neofetch.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"fly206"},"dateModified":"2022-03-26T14:39:50+08:00","datePublished":"2022-03-23T00:03:51+08:00","description":"为R4S软路由安装系统，测试了一下不同的发行版的根文件系统，尝试了一下内核编译和引导","headline":"R4S 系统安装小记录","image":{"width":800,"height":500,"url":"http://localhost:4000/images/note_img/void-neofetch.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1003,6 +1003,24 @@
 
       <!-- lastmod date -->
       
+      <span>
+        更新于
+        <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago"
+    data-ts="1648276790"
+    
+      data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
+    
+    >
+  2022-03-26
+</em>
+
+      </span>
+      
 
       <!-- read time -->
       <!--
@@ -1231,7 +1249,7 @@ mount /dev/sdX /mnt
 make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 -pipe -march=armv8-a -mfloat-abi=hard"</span> <span class="nt">-j64</span> <span class="nv">INSTALL_PATH</span><span class="o">=</span><span class="s2">"/mnt/boot/"</span> <span class="nb">install</span>
 
 <span class="c"># 安装dtb，注意要安装到boot下的dtb目录而不是dtbs目录，uboot默认读取位置为dtb,否则需要修改uboot变量以支持其他目录</span>
-make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 -pipe -march=armv8-a -mfloat-abi=hard"</span> <span class="nt">-j64</span> <span class="nv">INSTALL_DTBS_PATH</span><span class="o">=</span><span class="s2">"/mnt/boot/dtb"</span> dtbs_install
+make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 -pipe -march=armv8-a -mfloat-abi=hard"</span> <span class="nt">-j64</span> <span class="nv">INSTALL_DTBS_PATH</span><span class="o">=</span><span class="s2">"/mnt/boot/dtbs"</span> dtbs_install
 
 <span class="c"># 安装modules</span>
 make <span class="nv">ARCH</span><span class="o">=</span>arm64 <span class="nv">CROSS_COMPILE</span><span class="o">=</span>aarch64-linux-gnu- <span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">"-O2 -pipe -march=armv8-a -mfloat-abi=hard"</span> <span class="nt">-j64</span> <span class="nv">INSTALL_MOD_PATH</span><span class="o">=</span><span class="s2">"/mnt"</span> modules_install
@@ -1687,6 +1705,20 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
 
 
 
+
+
+
+  <div id="access-lastmod" class="post">
+    <div class="panel-heading">最近更新</div>
+    <ul class="post-content pl-0 pb-1 ml-1 mt-2">
+      
+        
+        
+        
+      <li><a href="/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">R4S 系统安装小记录</a></li>
+      
+    </ul>
+  </div> <!-- #access-lastmod -->
 
 
 
