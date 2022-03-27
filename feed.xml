@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Notes</title>
   <subtitle>Enter ye in by the narrow gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many be they that enter in thereby.</subtitle>
-  <updated>2022-03-26T14:42:38+08:00</updated>
+  <updated>2022-03-27T14:23:16+08:00</updated>
   <author>
     <name>fly206</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,60 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>使用命令行安装kali最小化系统</title>
+    <link href="http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85kali%E6%9C%80%E5%B0%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/" rel="alternate" type="text/html" title="使用命令行安装kali最小化系统" />
+    <published>2022-03-27T10:28:57+08:00</published>
+  
+    <updated>2022-03-27T10:28:57+08:00</updated>
+  
+    <id>http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85kali%E6%9C%80%E5%B0%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/</id>
+    <content src="http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85kali%E6%9C%80%E5%B0%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/" />
+    <author>
+      <name>fly206</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      使用命令行安装kali最小化系统
+
+文件系统格式化及挂载
+mkfs.btrfs /dev/sda4
+mkfs.vfat -F32 /dev/sda5
+mount /dev/sda4 /mnt
+mkdir -p /mnt/boot
+mount /dev/sda5 /mnt/boot
+
+使用debootstrap安装基础系统组件：
+# debootstrap [选项] [开发版代号] [根分区目录] [仓库链接]
+debootstrap --arch=amd64 kali-rolling /mnt http://mirrors.ustc.edu.cn/kali
+
+基础系统配置
+fatab分区配置，使用genfstab生成挂载信息
+# genfstab [选项] [已挂载的分区] 
+# -U 使用UUID代替分区分区名称
+# 并重定向到fstab文件
+genfstab -U /mnt &amp;g...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -81,7 +135,7 @@ exp...
     <link href="http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="alternate" type="text/html" title="R4S 系统安装小记录" />
     <published>2022-03-23T00:03:51+08:00</published>
   
-    <updated>2022-03-26T14:39:50+08:00</updated>
+    <updated>2022-03-26T14:42:48+08:00</updated>
   
     <id>http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</id>
     <content src="http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" />

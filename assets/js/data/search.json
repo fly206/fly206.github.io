@@ -1,6 +1,21 @@
 [
   
   {
+    "title": "使用命令行安装kali最小化系统",
+    "url": "/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85kali%E6%9C%80%E5%B0%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/",
+    "categories": "Blogging, Linux",
+    "tags": "kalilinux",
+    "date": "2022-03-27 10:28:57 +0800",
+    
+
+
+
+
+
+    "snippet": "使用命令行安装kali最小化系统文件系统格式化及挂载mkfs.btrfs /dev/sda4mkfs.vfat -F32 /dev/sda5mount /dev/sda4 /mntmkdir -p /mnt/bootmount /dev/sda5 /mnt/boot使用debootstrap安装基础系统组件：# debootstrap [选项] [开发版代号] [根分区目录] [仓库链接]debootstrap --arch=amd64 kali-rolling /mnt http://mirrors.ustc.edu.cn/kali基础系统配置fatab分区配置，使用genfstab生成挂载信息# genfstab [选项] [已挂载的分区] # -U 使用UUID代替分区分区名称# 并重定向到fstab文件genfstab -U /mnt &gt; /mnt/etc/fstabchroot进入系统并配置，这里使用systemd-nspawn# 使用-D选项指定目录systemd-nspawn -D /mnt开始配置系统# 设定root密码passwd# 修改软件源nano /etc/apt/sources.list# 添加中科大源deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contribdeb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib# 软件更新apt update &amp;&amp; apt upgrade# 时区配置ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime# 本地化apt install localesecho \"LANG=en_US.UTF-8\" &gt; /etc/locale.confdpkg-reconfigure locales# 配置主机名echo \"kali\" &gt; /etc/hostname# 配置主机名解析echo -e \"127.0.0.1\\tkali\" &gt;&gt; /etc/hosts# 安装自己需要的固件文件apt install kali-linux-firmware firmware-realtek firmware-linux firmware-linux-free firmware-linux-nonfree firmware-iwlwifi firmware-amd-graphics bluez-firmware# 安装linux内核apt install linux-image-amd64# 配置启动文件（由于本人的主系统已有refind,只需要加一个配置文件即可，# 也可以额外安装grub等启动管理器）# 在boot分区新建文件touch /boot/refind_linux.conf# 添加根分区信息\"Boot with standard options\"  \"root=UUID=31d828ea-acfc-4391-bbd8-ccdeeb6b6993 rw rootflags=subvol=/ loglevel=5\"\"Boot to single-user mode\"    \"root=UUID=31d828ea-acfc-4391-bbd8-ccdeeb6b6993 rw rootflags=subvol=/ loglevel=5 single\"\"Boot with minimal options\"   \"ro root=/dev/nvme0n1p2\"经过以上配置，可以基本正常的启动到新系统了，以下额外配置可以使用chroot的方式配置，也可以在新系统启动后配置额外配置# 使用systemd-nspawn进入新系统systemd-nspawn -D /mnt -b# 新建普通用户adduser fly# 添加sudoapt install sudo# 配置sudoers文件nano /etc/sudoers# 添加以下配置fly     ALL=(ALL:ALL) ALL# 安装网络管理，这里安装networkmanager网络管理apt install network-manager# 安装sway窗口管理器及相关组件apt install sway grimshot sway-backgrounds swaybg swayidle swayimg waybar wdisplays wofi foot# 安装xorg的wayland兼容层apt install xwayland# 配置profile, 增加sway启动nano /home/fly/.profile# 添加以下内容if [ -z $DISPLAY ] &amp;&amp; [ \"$(tty)\" = \"/dev/tty1\" ]; then  exec swayfi# 安装网络管理器前端工具sudo apt install nm-tray nm-tray-l10n# 安装系统信息查看工具sudo apt install neofetch# 安装bash命令行补全工具sudo apt install bash-completion# 安装fcitx5输入法sudo apt install fcitx5  fcitx5-chinese-addons  fcitx5-config-qt# 输入法配置sudo nano /etc/environment# 添加以下内容GTK_IM_MODULE=fcitxQT_IM_MODULE=fcitxXMODIFIERS=@im=fcitx# 安装网页浏览器sudo apt install firefox-esr# 其他软件包随用随装即可"
+  },
+  
+  {
     "title": "iw 命令编译",
     "url": "/posts/iw%E5%B7%A5%E5%85%B7%E7%BC%96%E8%AF%91/",
     "categories": "Blogging, Linux",

@@ -81,7 +81,7 @@
 <meta property="twitter:image" content="https://raw.githubusercontent.com/fly206/fly206.github.io/main/images/note_img/void-neofetch.png" />
 <meta property="twitter:title" content="R4S 系统安装小记录" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"fly206"},"dateModified":"2022-03-26T14:39:50+08:00","datePublished":"2022-03-23T00:03:51+08:00","description":"为R4S软路由安装系统，测试了一下不同的发行版的根文件系统，尝试了一下内核编译和引导","headline":"R4S 系统安装小记录","image":{"width":800,"height":500,"url":"http://localhost:4000/images/note_img/void-neofetch.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"fly206"},"dateModified":"2022-03-26T14:42:48+08:00","datePublished":"2022-03-23T00:03:51+08:00","description":"为R4S软路由安装系统，测试了一下不同的发行版的根文件系统，尝试了一下内核编译和引导","headline":"R4S 系统安装小记录","image":{"width":800,"height":500,"url":"http://localhost:4000/images/note_img/void-neofetch.png","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"},"url":"http://localhost:4000/posts/R4S%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -1011,7 +1011,7 @@
 -->
 
 <em class="timeago"
-    data-ts="1648276790"
+    data-ts="1648276968"
     
       data-toggle="tooltip" data-placement="bottom" data-tooltip-df="llll"
     
@@ -1743,6 +1743,20 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -1756,6 +1770,9 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
     
       
       <a class="post-tag" href="/tags/rootfs/">rootfs</a>
+    
+      
+      <a class="post-tag" href="/tags/kalilinux/">kalilinux</a>
     
 
     </div>
@@ -1827,6 +1844,19 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+  
     
 
 
@@ -1839,6 +1869,12 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
 
 
 
+  
+    
+    
+      
+      
+    
   
     
     
@@ -1897,6 +1933,56 @@ ttyS2::respawn:/sbin/getty <span class="nt">-L</span> ttyS2 1500000 vt100
 configure:
 
 ./configure --prefix=/run/media/fly/rootfs --target=arm-linux-gnueabihf --host=arm-linux-gnueabihf --build=x86_64-linux-gnu CC=arm-linux-gnueabih...
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    
+      
+      
+      <div class="card">
+        <a href="/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85kali%E6%9C%80%E5%B0%8F%E5%8C%96%E7%B3%BB%E7%BB%9F/">
+          <div class="card-body">
+            <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/timeago.js
+-->
+
+<em class="timeago small"
+    data-ts="1648348137"
+    
+    >
+  2022-03-27
+</em>
+
+            <h3 class="pt-0 mt-1 mb-3" data-toc-skip>使用命令行安装kali最小化系统</h3>
+            <div class="text-muted small">
+              <p>
+                
+
+
+
+
+
+                使用命令行安装kali最小化系统
+
+文件系统格式化及挂载
+1
+2
+3
+4
+5
+mkfs.btrfs /dev/sda4
+mkfs.vfat -F32 /dev/sda5
+mount /dev/sda4 /mnt
+mkdir -p /mnt/boot
+mount /dev/sda5 /mnt/boot
+
+使用debootstrap安装基础系统组件：
+1
+2
+# debootstrap [选项]...
               </p>
             </div>
           </div>
@@ -2007,6 +2093,20 @@ configure:
     
     
     
+  
+    
+    
+    
+    
+      
+        
+        
+
+  
+    
+    
+    
+    
       
         
         
@@ -2020,6 +2120,9 @@ configure:
     
       
       <a class="post-tag" href="/tags/rootfs/">rootfs</a>
+    
+      
+      <a class="post-tag" href="/tags/kalilinux/">kalilinux</a>
     
 
     </div>
