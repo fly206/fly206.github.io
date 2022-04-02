@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>Notes</title>
   <subtitle>Enter ye in by the narrow gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many be they that enter in thereby.</subtitle>
-  <updated>2022-03-27T14:23:16+08:00</updated>
+  <updated>2022-04-02T21:22:39+08:00</updated>
   <author>
     <name>fly206</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,104 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>ipsec原理学习笔记(转载)</title>
+    <link href="http://localhost:4000/posts/ipsec%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E8%BD%AC%E8%BD%BD)/" rel="alternate" type="text/html" title="ipsec原理学习笔记(转载)" />
+    <published>2022-04-02T00:00:00+08:00</published>
+  
+    <updated>2022-04-02T00:00:00+08:00</updated>
+  
+    <id>http://localhost:4000/posts/ipsec%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E8%BD%AC%E8%BD%BD)/</id>
+    <content src="http://localhost:4000/posts/ipsec%E5%8E%9F%E7%90%86%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E8%BD%AC%E8%BD%BD)/" />
+    <author>
+      <name>fly206</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="vpn" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      ipsec 简介
+IPsec（Internet Protocol Security）是为IP网络提供安全性的协议和服务的集合，它是VPN（Virtual Private Network，虚拟专用网）中常用的一种技术。 由于IP报文本身没有集成任何安全特性，IP数据包在公用网络如Internet中传输可能会面临被伪造、窃取或篡改的风险。通信双方通过IPsec建立一条IPsec隧道，IP数据包通过IPsec隧道进行加密传输，有效保证了数据在不安全的网络环境如Internet中传输的安全性。
+  IPsec VPN是指采用IPsec实现远程接入的一种VPN技术，通过在公网上为两个或多个私有网络之间建立IPsec隧道，并通过加密和验证算法保证VPN连接的安全。
+
+
+
+IPsec VPN保护的是点对点之间的通信，通过IPsec VPN可以在主机和主机之间、主机和网络安全网关之间或网络安全网关（...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>使用命令行安装ubuntu最小化系统</title>
+    <link href="http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85ubuntu/" rel="alternate" type="text/html" title="使用命令行安装ubuntu最小化系统" />
+    <published>2022-03-27T16:43:48+08:00</published>
+  
+    <updated>2022-03-27T16:43:48+08:00</updated>
+  
+    <id>http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85ubuntu/</id>
+    <content src="http://localhost:4000/posts/%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%AE%89%E8%A3%85ubuntu/" />
+    <author>
+      <name>fly206</name>
+    </author>
+
+  
+    
+    <category term="Blogging" />
+    
+    <category term="Linux" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      使用命令行安装ubuntu
+
+文件系统格式化及挂载
+mkfs.btrfs /dev/sda4
+mkfs.vfat -F32 /dev/sda5
+mount /dev/sda4 /mnt
+# btrfs 添加子卷
+cd /mnt
+btrfs subvolume create @rootfs
+btrfs subvolume create @home
+# 重新挂载
+cd ~
+umount /mnt
+mount -t btrfs -o subvol=@rootfs /dev/sda4 /mnt
+mkdir -p /mnt/home
+mount -t btrfs -o subvol=@home /dev/sda4 /mnt/home
+mkdir -p /mnt/boot
+mount /dev/sda5 /mnt/boot
+
+使用debootstrap安装基础系统组件：
+# debootstra...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
